@@ -62,29 +62,20 @@ Claude Desktop is Anthropic’s native desktop client for interacting with Claud
 
 In this section, you will configure Claude Desktop to use it as an MCP server.
 
-<!-- ### 3.1 Clone and Build
-
-1. Open a terminal (Windows: PowerShell or Command Prompt; macOS: Terminal).  
-2. Clone the repo and navigate into it:  
-   ```bash
-   git clone https://github.com/benborla/mcp-server-mysql.git
-   cd mcp-server-mysql
-   ```  
-3. Install dependencies:  
-   ```bash
-   npm install
-   ```  
-4. Build the project:  
-   ```bash
-   npm run build
-   ``` -->
-
-### 3.2 Configure Claude Desktop
+### 3.1 Configure Claude Desktop
 
 1. Get started by opening up the Claude menu on your computer and select “Settings…” Please note that these are not the Claude Account Settings found in the app window itself.
 
-    This is what it should look like on a Mac:
-    ![claude desktop settings on MacOS](https://mintlify.s3.us-west-1.amazonaws.com/mcp/images/quickstart-menu.png)
+    This is what it should look like:
+
+    <Tabs>
+      <TabItem value="windows" label="Windows" default>
+        ![claude desktop settings on Windows](/img/windows_claude_settings.png)
+      </TabItem>
+      <TabItem value="macos" label="MacOS">
+        ![claude desktop settings on MacOS](/img/macos_claude_settings.png)
+      </TabItem>
+    </Tabs>
 
 2. Click on “Developer” in the left-hand bar of the Settings pane, and then click on “Edit Config”:
 
@@ -158,55 +149,6 @@ In this section, you will configure Claude Desktop to use it as an MCP server.
     To get the MySQL credentials, please contact you nearest programmer.
 
 4. Save and close the file.
-
-<!-- 1. Locate Claude Desktop’s configuration file:  
-   - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`  
-   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
-2. Open `claude_desktop_config.json` in a text editor and add the `mcpServers` entry under the top‑level JSON object, for example:  
-   ```json
-   {
-     "mcpServers": {
-       "mcp_server_mysql": {
-         "command": "/absolute/path/to/node",
-         "args": [
-           "/absolute/path/to/mcp-server-mysql/dist/index.js"
-         ],
-         "env": {
-           "MYSQL_HOST": "127.0.0.1",
-           "MYSQL_PORT": "3306",
-           "MYSQL_USER": "root",
-           "MYSQL_PASS": "your_password",
-           "MYSQL_DB": "your_database",
-           "ALLOW_INSERT_OPERATION": "false",
-           "ALLOW_UPDATE_OPERATION": "false",
-           "ALLOW_DELETE_OPERATION": "false",
-           "PATH": "/absolute/path/to/node/bin:/usr/bin:/bin",
-           "NODE_PATH": "/absolute/path/to/node/lib/node_modules"
-         }
-       }
-     }
-   }
-   ```  
-   - Replace `/absolute/path/to/node` with the full path to your `node` binary (use `which node`).  
-   - Replace `/absolute/path/to/mcp-server-mysql` with your clone’s full path. citeturn2view0  
-
-3. Save and close the file. -->
-
-<!-- ### 3.3 Start and Test the Server
-
-1. In your terminal, run the server directly to verify connectivity:  
-   ```bash
-   node dist/index.js
-   ```  
-2. Check the console for a successful MySQL connection message.  
-3. In Claude Desktop, open any chat and run a SQL query tool, e.g.:  
-   ```json
-   {
-     "tool": "mysql_query",
-     "sql": "SHOW TABLES;"
-   }
-   ```  
-   If you see your database tables listed, the integration is working. -->
 
 ### Troubleshooting
 
