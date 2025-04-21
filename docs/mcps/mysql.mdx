@@ -108,7 +108,7 @@ In this section, you will configure Claude Desktop to use it as an MCP server.
               "ALLOW_DELETE_OPERATION": "false",
                 "PATH": "absolute\\path\\to\\nodejs\\",
                 "NODE_PATH": "absolute\\path\\to\\nodejs\\node_modules\\",
-                "APPDATA": "C:\\Users\\adria\\AppData\\Roaming\\"
+                "APPDATA": "absolute\\path\\to\\AppData\\Roaming\\"
             }
           }
         }
@@ -144,9 +144,12 @@ In this section, you will configure Claude Desktop to use it as an MCP server.
     </TabItem>
   </Tabs>
 
-    Replace `/absolute/path/to/node`(MacOS) or `absolute\\path\\to\\node` (Windows) with the full path to your `node` binary (use `which node` for MacOS or use `where node` for Windows).
+    Don't forget to replace these values in the config : 
+    - `/absolute/path/to/node` (MacOS) -> full path to your `node` binary (use `which node` in your terminal)
+    - `absolute\\path\\to\\node` (Windows) -> full path to your `node` binary (use `where node` in your terminal)
+    - `absolute\\path\\to\\AppData\\Roaming\\` (Windows) -> full path to your `Appdata/Roaming` (Search for "Run" in the windows search. or press the Windows + R button to open the Run App. In the run app text box, enter "%AppData%" and click OK.)
     
-    To get the MySQL credentials, please contact you nearest programmer.
+    *NOTE: To get the MySQL credentials for KMPlus' clients database, please contact you nearest KMPlus engineer or anyone who has the credentials.
 
 4. Save and close the file.
 
