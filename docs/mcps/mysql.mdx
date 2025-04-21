@@ -189,8 +189,8 @@ Paste the following JSON snippet into your `mcp.json` file, replacing placeholde
         "MYSQL_USER=root",
         "MYSQL_PASS=root",
         "MYSQL_DB=demostore",
-        "ALLOW_INSERT_OPERATION=true",
-        "ALLOW_UPDATE_OPERATION=true",
+        "ALLOW_INSERT_OPERATION=false",
+        "ALLOW_UPDATE_OPERATION=false",
         "ALLOW_DELETE_OPERATION=false",
         "--",
         "npx",
@@ -205,7 +205,7 @@ Paste the following JSON snippet into your `mcp.json` file, replacing placeholde
 ### 4.3 Apply and Verify
 
 1. Save `mcp.json` and restart Cursor IDE to apply the new MCP server configuration.
-2. Open a chat inside Cursor and invoke the SQL tool by telling the agent to use `mcp_server_mysql`, for example:  
+2. Open a chat inside Cursor, use the Agent feature, and invoke the SQL tool by telling the agent to use `mcp_server_mysql`, for example:  
    > "Show me all tables in the MySQL database via `mcp_server_mysql`."  
 3. Verify that the tool runs successfully and returns your MySQL tables, confirming the MCP server is active.
 
