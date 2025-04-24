@@ -1,4 +1,4 @@
-# Use official Node.js image
+# Use official Node.js base image
 FROM node:18-alpine AS builder
 
 # Set working directory
