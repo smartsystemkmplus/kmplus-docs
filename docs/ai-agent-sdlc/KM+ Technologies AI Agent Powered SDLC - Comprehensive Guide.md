@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # AI Agent Powered SDLC Pipeline: A Comprehensive Guide for Product Teams
 
 The integration of AI agents into the software development lifecycle represents a transformative approach to product creation, enabling teams to leverage artificial intelligence from ideation through deployment. This comprehensive guide outlines our company's new AI Agent Powered SDLC pipeline, providing a detailed framework for product teams to follow. By incorporating AI agents at each stage of development, we can dramatically improve efficiency, collaboration, and output quality while maintaining human oversight where it matters most. The implementation of Magic Patterns for UI generation and markdown-based Product Requirement Documents (PRDs) will serve as cornerstone technologies within this new approach, creating a more agile, responsive, and innovative product development process.
