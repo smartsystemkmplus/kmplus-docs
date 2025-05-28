@@ -1,0 +1,108 @@
+---
+sidebar_position: 2
+---
+
+# AI Playbook
+
+## Installing Cursor IDE
+
+Step-by-Step:
+
+1.  Visit the [Cursor Website](https://www.cursor.com/)
+2.  Download and install the IDE for your OS
+3.  Sign in with GitHub or supported login method
+4.  (Optional but recommended) Sync settings with your GitHub profile
+5.  Install Cursor on your device
+
+## Prompt Best Practices
+
+### Guiding Principle
+
+AI works best when given clearly defined constraints and context.
+
+To achieve this, we recommend two core strategies:
+
+* Refine prompting techniques to improve clarity and intent.
+* Decompose complex tasks into smaller, focused subtasks to reduce ambiguity.
+
+### Strategy 1: Prompting
+
+A well-formed prompt is the difference between usable code and irrelevant output. Here’s how to craft better prompts:
+
+#### Do
+
+* Include the **intent**: What do you want the code to do?
+  * You can design effective prompts for various simple tasks by using commands to instruct the model what you want to achieve, such as "Write", "Modify", "Create", etc.
+* Provide **structure**: Instructions, Inputs, Expected Outputs, Context.
+    * Make the prompt as specific as possible. Try to make a prompt that contains any of the following elements:
+        * **Instructions**: A specific task or instruction you want the model to perform.
+        * **Inputs**: The input or question that we are interested in finding a response for.
+        * **Expected Outputs**: The type or format of the output.
+        * **Context**: External information or additional context that can steer the model to better responses. For example, you can address edge cases you would like the model to know.
+* Instead of just saying what not to do, say what to do instead.
+  * This encourages more specificity and focuses on the details that lead to good responses from the model.
+
+#### Don't
+
+* Avoid vague terms like "make this better" or "write the code".
+* Don’t assume the AI knows your architecture or naming conventions unless you state them.
+
+#### Example
+
+**Bad Prompt:**
+
+```
+Create a login endpoint
+```
+
+**Better Prompt:**
+
+```
+Create a POST /login route. It should validate email and password, compare against a user record using bcrypt, and return a JWT. Please use these files as code style and architecture reference: 
+1. [PATH TO ROUTES] 
+2. [PATH TO HANDLER] 
+3. [PATH TO SERVICE] 
+4. [PATH TO REPOSITORY]
+```
+
+#### Tips
+
+* You can provide context by referring to a file or folder, or even through images.
+* To ensure naming conventions (although most of the time AI will do it by itself) you can create a blank file, folder, variables, functions etc, for AI to later complete with the functionality.
+* It is much better if you can provide inline comments to help guide AI.
+
+### Strategy 2: Break Down Complex Tasks
+
+Large, abstract goals often lead to generic or bloated AI outputs. Instead, split the work into discrete units.
+
+#### Example: Building a User Authentication System
+
+Instead of asking:
+
+```
+Build user authentication
+```
+
+Break it down:
+
+* Generate `POST /register` route with validation and hashed password.
+* Generate `POST /login` route with JWT token issuance.
+* Add middleware to validate JWT on protected routes.
+* Write unit tests for `AuthService`.
+* Generate OpenAPI docs for Auth endpoints.
+
+This method:
+
+* Makes AI output more reliable.
+* Reduces the need for heavy edits.
+* Increases code quality and maintainability.
+
+#### Tips
+
+* Think of a flow like a factory manufacturing products. It moves between processes with set input and output. Each process could be an optimal task for AI to do.
+* It may be easier to iterate carefully between tasks and save (commit) your progress, in case of hallucinations, than to tell AI to straighten up a bug at the end of a long conversation.
+* It’s okay to cancel out a long set of tasks if you are not satisfied with the results, for you to break them down smaller and re-iterate.
+
+## Feedback
+
+We’re at the early stage of adoption, any feedback provided would be helpful to construct a much better playbook. If you have any input or question, don’t hesitate to reach out.
